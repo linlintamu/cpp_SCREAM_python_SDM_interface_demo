@@ -36,7 +36,7 @@ int main() {
     std::cout << "C++ Begins. " << std::endl;
     // Import SDM_interface python module and call function with scalars
     py::module mod = py::module::import("py_interface");
-    py::tuple result = mod.attr("SDM_interface")(qc2, nc2, qr2, nr2, muc, mur, QSMALL);
+    py::tuple result = mod.attr("ROM_interface")(qc2, nc2, qr2, nr2, muc, mur, QSMALL);
 
     // Unpack tuple: retrieve tendency rate terms
     double qctend = result[0].cast<double>()/rho;  // unit: kg/kg/s
